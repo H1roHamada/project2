@@ -11,17 +11,12 @@ function multiplyLicensePrice() {
     TOTAL_PRICE.innerHTML = `$${num * price}`
 }
 
-function selectedPlan(plan) {
-    SELECTED_PLAN.innerHTML = plan
-}
-
-
 PLAN_ITEM.forEach(input => input.addEventListener('click', e => {
     PLAN_ITEM.forEach(e => e.classList.remove('active__plan'))
     input.classList.add('active__plan')
     price = e.target.dataset.price
     multiplyLicensePrice()
-    selectedPlan(e.target.dataset.id)
+    SELECTED_PLAN.innerHTML = e.target.dataset.id
 }))
 
 NUM_LICENSE.addEventListener('click', e => {
